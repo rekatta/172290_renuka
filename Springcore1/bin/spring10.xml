@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+  
+
+<bean id="customer1" class="com.springcore.pojo10.Customer1" autowire="byName">  
+<constructor-arg value="172290"/>
+<constructor-arg  value="renu"/>
+<constructor-arg type="int"  value="9912122"/>
+<constructor-arg  ref="address1"/>
+</bean>
+<bean id="address1" class="com.springcore.pojo10.Address1">
+<constructor-arg  value="cortpeta"/>
+<constructor-arg  value="visakhapatnam"/>
+<constructor-arg value="andhrapradesh"/>
+<constructor-arg  value="india"/>
+<constructor-arg type="int" value="531055"/>
+
+</bean>
+</beans>
