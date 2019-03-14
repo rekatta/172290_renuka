@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <bean id = "bankAccount" class = "com.capgemini.accountDetails.BankAccount">
+      <property name ="accountId" value = "011 "/>
+        <property name ="accountHolderName" value = " Revanth"/>
+        <property name ="accountType" value = "saving"/>
+           <property name ="accountBalance" value = "7000"/>
+   </bean>
+</beans>
