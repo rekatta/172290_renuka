@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+    "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans >
+<bean id="address" class="com.pojo.Address">
+<constructor-arg  value="cortpeta"/>
+<constructor-arg  value="vizag"/>
+<constructor-arg type="int" value="531055"/>
+<constructor-arg  value="Andhrapradesh"/>
+<constructor-arg  value="India"/>
+</bean>
+<bean id="customer" class="com.pojo.Customer" init-method="myInit" destroy-method="myCleanUp">
+<constructor-arg  type="int" value="12103143"/>
+<constructor-arg value="renuka"/>
+<constructor-arg  type="int" value="12345"/>
+<constructor-arg  ref="address"/>
+</bean>
+</beans>
