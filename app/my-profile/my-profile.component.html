@@ -1,0 +1,68 @@
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<br><br>
+<div *ngIf="currentPatient!=null">
+<div class="container-fluid well span6">
+	<div class="row-fluid">
+        <div class="span2" >
+		    <img src="" class="img-circle">
+        </div>
+        
+        <div class="span8">
+            <h3>First Name: {{currentPatient.firstName}}</h3>
+            <h6>Last Name: {{currentPatient.lastName}}</h6>
+            <h6>Gender: {{currentPatient.gender}}</h6>
+            <h6>Age: {{currentPatient.age}}</h6>
+            <h6>Gmail: {{currentPatient.email}}</h6>
+            <h6>Password: {{currentPatient.password}}</h6>
+            <h6><a>More... </a></h6>
+        </div>
+        
+        <div class="span2">
+            <div class="btn-group">
+                <button class="btn dropdown-toggle btn-info" (click)="logout()">
+                    Logout
+                    </button>
+            </div>
+        </div>
+</div>
+</div>
+</div>
+<div *ngIf="currentPatient==null  && currentDoctor==null"><h3 style="text-align:center">Priorly Please login</h3></div>
+
+
+
+
+<div *ngIf="currentDoctor!=null">
+    <div class="container-fluid well span6">
+        <div class="row-fluid">
+            <div class="span2" >
+                <img src="" class="img-circle">
+            </div>
+            
+            <div class="span8">
+                <h3> Name: {{currentDoctor.name}}</h3>
+                <h6>Email Id: {{currentDoctor.emailId}}</h6>
+                <h6>Age: {{currentDoctor.age}}</h6>
+                <h6>Location: {{currentDoctor.location}}</h6>
+                <h6>Experience: {{currentDoctor.experience}}</h6>
+                <h6>Specilization: {{currentDoctor.specilization}}</h6>
+                <h6>Qualification: {{currentDoctor.qualification}}</h6>
+                <h6>PhoneNumber: {{currentDoctor.phoneNumber}}</h6>
+                
+                <h6><a>More... </a></h6>
+            </div>
+            
+            <div class="span2">
+                <div class="btn-group">
+                    <button class="btn dropdown-toggle btn-info" (click)="logout()">
+                        Logout
+                        </button>
+                </div>
+            </div>
+    </div>
+    </div>
+    </div>

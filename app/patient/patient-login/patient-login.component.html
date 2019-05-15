@@ -1,0 +1,50 @@
+
+
+
+
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+        
+            <div id= "formHeader">
+                <a> <h4>PATIENT LOGIN</h4></a>
+               </div>
+            <br>
+          <!-- Login Form -->
+          <form  [formGroup]="loginForm" novalidate (ngSubmit)="Login()">
+           
+            <div>
+            <input type="text" id="email" class="fadeIn second" name="login" placeholder="email" formControlName="patientEmail">
+            <div *ngIf="loginForm.controls['patientEmail'].invalid && (loginForm.controls['patientEmail'].dirty || loginForm.controls['patientEmail'].touched)" class="alert alert-danger">
+                
+                    <div *ngIf="loginForm.controls['patientEmail'].errors.required">
+                      Email is required.
+                    </div>
+                    <div *ngIf="loginForm.controls['patientEmail'].errors.pattern">
+                      Email should be like in this [anything@gmail.com]
+                    </div>
+                 </div>
+            </div>
+            
+            <input type="password" id="password" class="fadeIn third" name="password" placeholder="password" formControlName="patientPassword">
+            <div *ngIf="loginForm.controls['patientPassword'].invalid && (loginForm.controls['patientPassword'].dirty || loginForm.controls['patientPassword'].touched)" class="alert alert-danger">
+                
+                <div *ngIf="loginForm.controls['patientPassword'].errors.required">
+                  Password is required.
+                </div>
+              </div> 
+            <input type="submit" class="fadeIn fourth" value="Log In" [disabled]="loginForm.invalid">
+          </form>
+          <div *ngIf="loginStatus"><p class="text-danger">wrong credentials</p></div>
+      
+          
+          <div id="formFooter">
+            <a class="" routerLink="/patientRegistration">SignUpHere</a> <br>
+            <a class="underlineHover" id="padding" href="#">Forgot Password?</a>
+          </div>
+
+         
+        </div>
+      </div>
+      
+
+  

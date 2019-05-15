@@ -1,0 +1,25 @@
+<div><h1>Your Appointments:</h1></div>
+
+<div class="container-fluid">
+    <table class="table table-striped" *ngIf="appointmentList!=null">
+  <thead class="thead-dark">
+  <tr>
+      <th>patient name</th>
+      <th>problem</th>
+      <th>location</th>
+      <th>Date</th>
+  </tr>
+  </thead>
+      <tr *ngFor="let appointment of appointmentList">
+        <td>{{appointment.patientName}}</td>
+        <td>{{appointment.problem}}</td>
+        <td>{{appointment.location}}</td>
+        <td>{{appointment.date|date: 'dd/MM/yyyy'}}</td>
+  
+      </tr>
+    </table>
+  
+  </div>
+
+  <div *ngIf="appointmentList==null" ><h1 class="text-danger">No appointments have taken till now</h1> </div>
+  

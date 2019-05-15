@@ -1,0 +1,50 @@
+
+<!-- <nav></nav>
+<a routerLink='/patient'>patient</a>
+<a routerLink='/doctor'>doctor</a>
+<a routerLink='/admin'>admin</a> -->
+<html lang="en">
+<head>
+  <title>patient</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+   <!-- <div class="container-fluid">  -->
+      
+    <div class="navbar-header">
+        <span><i class="fa fa-user-md" aria-hidden="true" style="font-size:46px;color:goldenrod"></i></span>
+      <a class="navbar-brand" href="#">DocApp</a>
+      
+    </div>
+    <ul class="nav navbar-nav">
+       
+      <li><a routerLink='/userHome'>Home</a></li>
+      <li><a  routerLink='/adminLogin'>Admin</a></li>
+      <li><a  routerLink='/doctor'>Doctor</a></li>
+      <li><a  routerLink='/patient'>Patient</a></li>
+     
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li ><a  routerLink='/contact'>Contact</a></li>
+      <li><a routerLink='/about'>About</a></li>
+      <li><a routerLink='/myProfile'><span class="glyphicon glyphicon-user"></span>My Profile</a></li>
+      <!-- <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
+    </ul>
+  <!-- </div> -->
+</nav>
+  
+</body>
+</html>
+
+
+<div class="footer">
+    <p>@CopyRight</p>
+  </div>
+<router-outlet></router-outlet>

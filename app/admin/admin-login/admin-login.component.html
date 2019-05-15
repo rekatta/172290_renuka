@@ -1,0 +1,43 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+  
+     <div id= "formHeader">
+      <a> <h4>ADMIN LOGIN</h4></a>
+     </div>
+  <br>
+      <!-- Login Form -->
+      <form  [formGroup]="adminForm" novalidate (ngSubmit)="onLogin()">
+        <div>
+        <input type="text" id="email" class="fadeIn second" name="login" placeholder="email" formControlName="email">
+        <div *ngIf="adminForm.controls['email'].invalid && (adminForm.controls['email'].dirty || adminForm.controls['email'].touched)" class="alert alert-danger">
+            <div *ngIf="adminForm.controls['email'].errors.required">
+              Email is required.
+            </div>
+            <div *ngIf="adminForm.controls['email'].errors.pattern">
+            <!--   [(a-z),(A-Z),(0-9)@gmail.com] -->
+              Email should be like in this [anything@gmail.com]
+            </div>
+          </div>
+          </div>
+        <input type="text" id="password" class="fadeIn third" name="password" placeholder="password" formControlName="password">
+        <div *ngIf="adminForm.controls['password'].invalid && (adminForm.controls['password'].dirty || adminForm.controls['password'].touched)" class="alert alert-danger">
+            <div *ngIf="adminForm.controls['password'].errors.required">
+              Password  is required.
+            </div>
+           
+          </div> 
+        <input type="submit" class="fadeIn fourth" value="Log In">
+      </form>
+  
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+       
+        <a class="underlineHover" id="padding" href="#">Forgot Password?</a>
+      </div>
+     
+    </div>
+  </div>
+  
+  
+  

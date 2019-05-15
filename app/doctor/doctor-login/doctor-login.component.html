@@ -1,0 +1,55 @@
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <div id= "formHeader">
+            <a> <h4>DOCTOR LOGIN</h4></a>
+           </div>
+        <br>
+  
+      <!-- Login Form -->
+      <form  [formGroup]="loginForm" novalidate (ngSubmit)="onLogin()">
+        <div>
+        <input type="text" id="email" class="fadeIn second" name="login" placeholder="email" formControlName="email">
+        <div *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)" class="alert alert-danger">
+            
+                <div *ngIf="loginForm.controls['email'].errors.required">
+                  Email is required.
+                </div>
+                <div *ngIf="loginForm.controls['email'].errors.pattern">
+                  Email should be like in this [anything@gmail.com]
+                </div>
+             </div>
+        </div>
+        
+        <input type="password" id="password" class="fadeIn third" name="password" placeholder="password" formControlName="password">
+        <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)" class="alert alert-danger">
+            
+            <div *ngIf="loginForm.controls['password'].errors.required">
+              Password is required.
+            </div>
+            <!-- <div *ngIf="loginForm.controls['password'].errors.maxlength">
+              Maximum characters for password is 15
+            </div>
+            <div *ngIf="loginForm.controls['password'].errors.minlength">
+              Minimum characters for password is 6
+            </div>
+            <div *ngIf="loginForm.controls['password'].errors.pattern">
+              Password should comprised of atleast one lowercase, uppercase and number
+            </div> -->
+          </div> 
+        <input type="submit" class="fadeIn fourth" value="Log In" [disabled]="loginForm.invalid">
+      </form>
+
+      <div *ngIf="loginStatus"><p class="text-danger">invalid credentials</p></div>
+  
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="" routerLink="/doctorRegistration">SignUpHere</a> <br>
+        <a class="underlineHover" id="padding" href="#">Forgot Password?</a>
+      </div>
+     
+    </div>
+  </div>
+  
+  
+  

@@ -1,0 +1,152 @@
+
+<div class="form">
+    <div class="form-toggle"></div>
+      <div class="form-panel one">
+        <div class="form-header">
+          <h2>Doctor Registration</h2>
+        </div>
+    
+      <div class="form-content">
+        <form [hidden]="submitted" [formGroup]="regForm" novalidate (ngSubmit)="register()">
+        
+          <div class="form-group">
+            <label class = 'center-block'>EmailId</label>
+              <input type="text" class="form-control" placeholder="enter email" formControlName="emailId"  id = "name" />
+         </div>
+        
+         <div *ngIf="regForm.controls['emailId'].invalid && (regForm.controls['emailId'].dirty || regForm.controls['emailId'].touched)" class="alert alert-danger">
+                    <div *ngIf="regForm.controls['emailId'].errors.required">Email is required.</div>
+                    <div *ngIf="regForm.controls['emailId'].errors.pattern">
+                      Email should be like in this [anything@gmail.com]
+                    </div>
+        </div>
+                    
+      
+            <div class="form-group">
+                <label for="name"> Name</label>
+                <input type="text" class="form-control"  placeholder="Enter your name" formControlName="name" id="name"   />
+            
+                <div *ngIf="regForm.controls['name'].invalid && (regForm.controls['name'].dirty || regForm.controls['name'].touched)" class="alert alert-danger">
+                    <div *ngIf="regForm.controls['name'].errors.required"> Name is required</div>
+                </div>
+        
+            
+            </div>
+
+            <div class="form-group">
+              <label for="qulification">Qualification</label>
+              <input type="text" formControlName="qulification" id="qulification" class="form-control" placeholder="Enter your Qualification" />
+            
+              <div *ngIf="regForm.controls['qulification'].invalid && (regForm.controls['qulification'].dirty || regForm.controls['qulification'].touched)" class="alert alert-danger">
+                  <div *ngIf="regForm.controls['qulification'].errors.required"> Qualification is required</div>
+              </div>
+           </div>
+            <div class="form-group">
+                <label for="phone number">phone number</label>
+                <input type="number" formControlName="phonenumber" id="phonenumber" class="form-control" placeholder="Enter your phone number" minlength="10" maxlength="10" />
+                
+                <div *ngIf="regForm.controls['phonenumber'].invalid && (regForm.controls['phonenumber'].dirty || regForm.controls['phonenumber'].touched)" class="alert alert-danger">
+                    <div *ngIf="regForm.controls['phonenumber'].errors.required"> phonenumber is required</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+              <label for="specilization">specilization</label>
+              <!-- <input type="text" formControlName="specilization" id="specilization" class="form-control" ng-required="true" [ngClass]="{ 'is-invalid': submitted && specilization.errors }" /> -->
+              
+              <select  class = "form-control" formControlName="specilization" id="specilization" class="form-control" ng-required="true" [ngClass]="{ 'is-invalid': submitted && specilization.errors }" >
+                    <option value="Cardiologist">Cardiologist</option>
+                    <option value="Neurologist">Neurologist</option>
+                    <option value="Orthopologist">Orthopologist</option>
+                    <option value="Dermatalogist">Dermatalogist</option>
+                    <option value="Psychiatrist">Psychiatrist</option>
+             </select>
+              <div *ngIf="submitted && regForm.specilization.errors" class="invalid-feedback">
+                  <div *ngIf="regForm.specilization.errors.required">specilization is required</div>
+              </div>
+            
+            </div>
+            
+
+            <div class="form-group">
+              <label for="location">Location</label>
+              <!-- <input type="text" formControlName="location" id="location" class="form-control" ng-required="true" [ngClass]="{ 'is-invalid': submitted && location.errors }" /> -->
+                 
+              <select  class = "form-control" formControlName="location" id="location" class="form-control" ng-required="true" [ngClass]="{ 'is-invalid': submitted && location.errors }">
+                    <option value="Banglore">Banglore</option>
+                    <option value="Hyderbad">Hyderbad</option>
+                    <option value="Visakhapatnam">Visakhapatnam</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Ippalavalasa">Ippalavalasa</option>
+                 </select>
+                </div>
+            <div class="form-group">
+                    <label for="experience">Experience</label>
+                    <input type="number" formControlName="experience" id="experience" class="form-control" placeholder="Enter your Experience" />
+                
+                    <div *ngIf="regForm.controls['experience'].invalid && (regForm.controls['experience'].dirty || regForm.controls['experience'].touched)" class="alert alert-danger">
+                            <div *ngIf="regForm.controls['experience'].errors.required"> experience is required</div>
+                        </div>
+            </div>
+
+          
+               
+                   
+
+
+            <div class="form-group" >
+                <label for="password">Password</label>
+                <input type="password" id="doctorpassword" class="form-control" name="password" placeholder="Enter your password" formControlName="password">
+            </div>
+        
+                <div *ngIf="regForm.controls['password'].invalid && (regForm.controls['password'].dirty || regForm.controls['password'].touched)" class="alert alert-danger">
+                        <div *ngIf="regForm.controls['password'].errors.required">
+                        Password  is required.
+                        </div>
+                        <div *ngIf="regForm.controls['password'].errors.maxlength">
+                          Maximum characters for password is 10
+                        </div>
+                        <div *ngIf="regForm.controls['password'].errors.minlength">
+                          Minimum characters for password is 6
+                        </div>
+                        <div *ngIf="regForm.controls['password'].errors.pattern">
+                          Password should comprised of atleast one lowercase, uppercase and number
+                        </div>
+                      </div>
+        
+                    
+                
+
+          
+          <div class="form-group">
+                  <label for="age">Age</label>
+                  <input type="number" formControlName="age" id="age" min="0" class="form-control"  placeholder="enter your age" />
+                  <div *ngIf=" regForm.controls['age'].invalid && (regForm.controls['age'].dirty || regForm.controls['age'].touched)" class="alert alert-danger">
+                      <div *ngIf="regForm.controls['age'].errors.required">Age is required</div>
+                  </div>
+              </div>
+            <div class="form-group"  id = "btncolor">
+                  <input type="submit"  class= "btn btn-success" value="submit" [disabled]="regForm.invalid" />
+            </div>
+
+      </form>
+      </div>
+      </div>
+      </div>
+    
+      
+
+ 
+
+
+
+
+
+
+
+
+
+
+  
+  

@@ -1,0 +1,111 @@
+
+                    
+                           
+    <div class="form">
+        <div class="form-toggle"></div>
+          <div class="form-panel one">
+            <div class="form-header">
+              <h2>Patient Registration</h2>
+            </div>
+                         
+            <div class="form-content">
+                <form [hidden]="submitted" [formGroup]='regForm'  (ngSubmit)="register()">
+                    <div class="form-group">
+                        <label class='center-block'>First Name</label>
+                        <input type="text" class="form-control" placeholder="Enter FirstName " formControlName="PatientfirstName" id="FirstName" /> 
+                    </div>
+             
+                    <div *ngIf="regForm.controls['PatientfirstName'].invalid && (regForm.controls['PatientfirstName'].dirty || regForm.controls['PatientfirstName'].touched)" class="alert alert-danger">
+                        <div *ngIf="regForm.controls['PatientfirstName'].errors.required">FirstName is required.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class='center-block'>Last Name</label>
+                        <input type="text" class="form-control" placeholder="Enter LastName " formControlName="PatientlastName" id="LastName" /> 
+                    </div>
+                 
+                    <div *ngIf="regForm.controls['PatientlastName'].invalid && (regForm.controls['PatientlastName'].dirty || regForm.controls['PatientlastName'].touched)" class="alert alert-danger">
+                        <div *ngIf="regForm.controls['PatientlastName'].errors.required">LastName is required.</div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class='center-block'>User Name</label>
+                        <input type="text" class="form-control" placeholder="Enter UserName " formControlName="Patientusername" id="UserName" /> 
+                    </div>
+                     
+                    <div *ngIf="regForm.controls['Patientusername'].invalid && (regForm.controls['Patientusername'].dirty || regForm.controls['Patientusername'].touched)" class="alert alert-danger">
+                        <div *ngIf="regForm.controls['Patientusername'].errors.required">UserName is required.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class='center-block'>Age</label>
+                        <input type="text" class="form-control" placeholder="Enter age " formControlName="Patientage" id="Age" /> 
+                    </div>
+                         
+                    <div *ngIf="regForm.controls['Patientage'].invalid && (regForm.controls['Patientage'].dirty || regForm.controls['Patientage'].touched)" class="alert alert-danger">
+                        <div *ngIf="regForm.controls['Patientage'].errors.required">Age is required.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class='center-block'>Gender</label>
+                        <div><input type="radio" formControlName="Patientgender"  value="Male">Male</div>
+                        <div><input type="radio"  formControlName="Patientgender"  value="Female">Female</div> 
+                        <div> <input type="radio" formControlName="Patientgender"  value="Others">Others</div> 
+                    </div>  
+                    <div *ngIf="regForm.controls['Patientgender'].invalid && (regForm.controls['Patientgender'].dirty || regForm.controls['Patientgender'].touched)" class="alert alert-danger">
+                             <div *ngIf="regForm.controls['Patientgender'].errors.required">Gender is required</div>
+                    </div>
+                    
+
+                    <div class="form-group">
+                        <label class = 'center-block'>EmailId</label>
+                        <input type="text" class="form-control" placeholder="enter email" formControlName="Patientemail"  id = "emailId" />
+                    </div>
+                    
+                    <div *ngIf="regForm.controls['Patientemail'].invalid && (regForm.controls['Patientemail'].dirty || regForm.controls['Patientemail'].touched)" class="alert alert-danger">
+                            <div *ngIf="regForm.controls['Patientemail'].errors.required">Email is required.</div>
+                            <div *ngIf="regForm.controls['Patientemail'].errors.pattern">
+                                  Email should be like in this [anything@gmail.com]
+                            </div>
+                    </div>
+
+                    <div class="form-group" >
+                        <label for="password">Password</label>
+                        <input type="password" id="doctorpassword" class="form-control" name="password" placeholder="Enter your password" formControlName="Patientpassword">
+                    </div>
+                
+                    <div *ngIf="regForm.controls['Patientpassword'].invalid && (regForm.controls['Patientpassword'].dirty || regForm.controls['Patientpassword'].touched)" class="alert alert-danger">
+                            <div *ngIf="regForm.controls['Patientpassword'].errors.required">
+                                Password  is required.
+                            </div>
+                            <div *ngIf="regForm.controls['Patientpassword'].errors.maxlength">
+                                  Maximum characters for password is 10
+                            </div>
+                            <div *ngIf="regForm.controls['Patientpassword'].errors.minlength">
+                                  Minimum characters for password is 6
+                            </div>
+                            <div *ngIf="regForm.controls['Patientpassword'].errors.pattern">
+                                  Password should comprised of atleast one lowercase, uppercase and number
+                            </div>
+                    </div>
+            
+
+                <div class="form-group"  id = "btncolor">
+                            <input type="submit"  class= "btn btn-success" value="submit" [disabled]="regForm.invalid" />
+                </div>
+          
+              
+
+            </form>
+            <div *ngIf="status">you are registered successfully click here to <a routerLink="/patientLogin">Login</a></div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
